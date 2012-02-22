@@ -14,8 +14,10 @@ class main:
 		return pystache.render(open('docdrop.html').read(), {})
 	def POST(self):
 		formInput = web.input(docableFile={})
+		if formInput['docableFile'].filename == '':
+			return 'Please submit a file.'
+		
 		documentedSource = generate_documentation(formInput['docableFile'])
-		#import pdb; pdb.set_trace()
 		return documentedSource
 
 if __name__ == '__main__':
