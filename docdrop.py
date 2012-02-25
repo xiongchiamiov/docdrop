@@ -24,7 +24,7 @@ class main:
 		# the key. *shrug*
 		if formInput['docableFile'] == {}:
 			# pycco barfs if there's no file extension...
-			filename = 'unknown.unknown'
+			filename = 'unknown.filename'
 			code = formInput.keys()[0] + formInput[formInput.keys()[0]]
 		else:
 			filename = formInput['docableFile'].filename
