@@ -33,16 +33,16 @@ Or, to install the latest source
 
 # === Main Documentation Generation Functions ===
 
-def generate_documentation(sourceFile, preserve_paths=True):
+def generate_documentation(filename, code, preserve_paths=True):
     """
     Generate the documentation for a source file by reading it in, splitting it
     up into comment/code sections, highlighting them for the appropriate
     language, and merging them into an HTML template.
     """
 
-    sections = parse(sourceFile.filename, sourceFile.value)
-    highlight(sourceFile.filename, sourceFile.value, sections, preserve_paths=preserve_paths)
-    return generate_html(sourceFile.filename, sections, preserve_paths=preserve_paths)
+    sections = parse(filename, code)
+    highlight(filename, code, sections, preserve_paths=preserve_paths)
+    return generate_html(filename, sections, preserve_paths=preserve_paths)
 
 def parse(sourceFilename, code):
     """

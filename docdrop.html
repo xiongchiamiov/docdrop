@@ -1,12 +1,20 @@
 <html>
 	<head>
 		<title>docdrop</title>
+		<script type="text/javascript" src="/static/docdrop.js"></script>
+		<style type="text/css">
+			#holder.hover {
+				background-color: red;
+			}
+		</style>
 	</head>
 	<body>
-		<form action="" method="post" enctype="multipart/form-data">
-			<input type="file" name="docableFile" />
-			<input type="submit" />
+		<form id="upload" action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="docableFile" id="docableFile" />
+			<input type="submit" id="submit" />
+			<div id="holder" style="border: 1px black dotted;">or drop here</div>
 		</form>
+		<div id="messages"></div>
 	</body>
 </html>
 
